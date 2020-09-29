@@ -1,0 +1,42 @@
+<?php
+	@session_start();
+
+	if(isset($_SESSION['funcionario'])){	
+
+		echo '<ul class="nav nav-pills nav-stacked">';	
+			echo '<li><a href="index.php">';
+			echo '<span class="glyphicon glyphicon-home"></span>';
+			echo ' Home </a></li>';
+
+			echo '<li><a href="?option=list_clients">';
+			echo '<span class="glyphicon glyphicon-list"></span>';
+			echo ' Clientes </a></li>';
+
+			echo '<li><a href="?option=list_sales">';
+			echo '<span class="glyphicon glyphicon-shopping-cart"></span>';
+			echo ' Vendas </a></li>';
+
+			echo '<li><a href="?option=list_products">';
+			echo '<span class="glyphicon glyphicon-barcode"></span>';
+			echo ' Produtos </a></li>';
+
+			echo '<li><a href="controller/logout.php">';
+			echo '<span class="glyphicon glyphicon-off"></span>';
+			echo ' Sair do Sistema </a></li>';
+
+		echo "</ul>";
+
+
+	}
+
+/*
+	if($_SESSION['user_type'] == "admin"){
+		echo '<ul class="nav nav-pills nav-stacked">';	
+			echo '<li><a href="">';
+			echo '<span class="glyphicon glyphicon-home"></span>';
+			echo 'Home </a></li>';
+
+
+
+	}
+*/

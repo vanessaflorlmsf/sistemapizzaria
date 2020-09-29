@@ -1,0 +1,104 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title><?php echo $page_title;?></title>
+	<link rel="stylesheet" type="text/css" href="<?php echo $project_index;?>/view/static/bootstrap/css/bootstrap.css">
+	<script type="text/javascript" src="<?php echo $project_index;?>/view/static/bootstrap/js/jquery.js"></script>
+	<script type="text/javascript" src="<?php echo $project_index;?>/view/static/bootstrap/js/bootstrap.js"></script>
+</head>
+<body>
+<!-- CABECALHO -->
+	<div class="row banner"> 
+		<div class="col-md-12">
+			<div class="container">
+				<nav class="navbar navbar-inverse">
+				  <a href="index.php" class="navbar-brand">
+				  	Pizza's Power
+				  </a>
+				  <p class="text-right" style="padding:13px;">
+					  <?php
+					  	if(isset($_SESSION['funcionario']) or isset($_SESSION['admin'])){
+					  		
+					  		//echo $user['user_name'];
+
+					  		echo '<button class="btn btn-default btn-xs">';
+					  			echo '<i class="glyphicon glyphicon-user"></i>Perfil';
+					  		echo '</button> &nbsp;&nbsp;';
+
+					  		//Botão pra fazer o logout	
+					  		echo '<a href="controller/logout.php">';
+					  			echo '<button class="btn btn-default btn-xs">';
+					  			echo '<i class="glyphicon glyphicon-off"></i>';
+					  			echo 'Sair';
+					  			echo '</button>';
+					  		echo '</a>';
+					  		
+					  	}
+					  ?>
+				  </p>
+				</nav>
+			</div>
+		</div>
+	</div>
+<!-- FIM CABECALHO -->
+<!-- CORPO DO TEMPLATE -->
+	<div class="row content">
+		<div class="container">
+			<div class="col-md-3">
+				<!-- Panel -->
+				<div class="panel panel-primary">
+				  <div class="panel-heading">
+				    <h3 class="panel-title">
+				    	<i class="glyphicon glyphicon-user"></i>
+				    	Área do Usuário</h3>
+				  </div>
+				  <div class="panel-body">
+				    <?php
+				    	if(isset($_SESSION['funcionario']) or isset($_SESSION['admin'])){
+				    		include_once 'menu.html';
+				    	}else{
+					    	include_once 'forms/login.html';
+				   		}
+				    ?>
+				  </div>
+				</div>
+				<!-- fim do panel -->
+			</div>
+
+			<div class="col-md-9">
+				<!-- Panel -->
+				<div class="panel panel-primary">
+				  <div class="panel-heading">
+				    <h3 class="panel-title">
+				    	<i class="glyphicon glyphicon-list"></i>
+				    	 <?php echo $panel_title;?></h3>
+				  </div>
+				  <div class="panel-body">
+				    <?php
+				    	 page_content();
+				    ?>
+				  </div>
+				</div>
+				<!-- fim do panel -->
+			</div>
+		</div>
+	</div>
+<!-- FIM CORPO -->
+<!-- RODAPÉ -->
+	<div class="row footer">
+		<div class="container">
+			<div class="col-md-12">
+				<nav class="navbar navbar-inverse">
+				   	<p class="text-center" style="padding:15px;color:white !important">
+				  	Pizza's Power&reg; - Anthony - Copyright&copy;
+				  	<?php echo date('Y');?>
+				  	</p> 
+				  
+				</nav>
+			</div>
+		</div>
+	</div>
+<!-- FIM DO RODAPÉ -->
+
+</body>
+</html>
