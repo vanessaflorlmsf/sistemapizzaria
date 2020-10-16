@@ -1,0 +1,35 @@
+<form action="" method="POST">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Nome do Funcionario:</label>
+    <input type="text" class="form-control"  placeholder="Seu nome" name="client_name" required value="<?php echo $functionary['user_name'];?>" disabled>
+  </div>
+
+  <div class="form-group">
+	  <label for="exampleInputEmail1">Nome do Cliente:</label>
+	  <select class="form-control" name="client_id">
+	  	<option selected disabled> 
+	  		-- Selecione um cliente --  
+	  	</option>
+	  	<?php
+	  		foreach ($clients as $value) {
+	  			echo '<option value="',$value['id_client'],'">',$value['client_name'],"</option>";
+	  		}
+	  	?>
+	  </select>
+	  
+  </div>	
+
+  <div class="form-group">
+	  <label for="exampleInputEmail1">Produtos:</label>
+	  <select class="form-control" name="product_id">
+	  	<option selected disabled> 
+	  		-- Selecione um produto --  
+	  	</option>
+	  	<?php
+	  		foreach ($products as $value) {
+	  			echo '<option value="',$value['id_product'],'">',$value['product_name'],"</option>";
+	  		}
+	  	?>
+	  </select>
+	  
+  </div>

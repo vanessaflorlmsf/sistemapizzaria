@@ -1,0 +1,67 @@
+O que uma loja tem?
+
+
+	produtos
+		->codigo
+		->nome
+		->preço
+		->descrição
+		->nome do fornecedor
+
+
+	funcionarios
+		->id_funcionario INT
+		->nome_funcionario VARCHAR(255)
+		->cpf_funcionario VARCHAR(20)
+		->rg_funcionario VARCHAR(20)
+		->endereco_funcionario VARCHAR(255)
+		->telefone_funcionario VARCHAR(30)
+		->celular_funcionario VARCHAR(30)
+		->dt_nasc_funcionario DATE
+		->sexo_funcionario CHAR(1)
+		->dt_admissao_funcionario DATE
+		->salario_funcionario FLOAT
+		->status_funcionario BOOLEAN(BOOL)
+
+
+	clientes
+	CREATE TABLE clientes(
+
+		->id_cliente INT(11) PRIMARY KEY AUTO_INCREMENT,
+		->nome_cliente VARCHAR(255),
+		->cpf_cliente VARCHAR(20)
+		->rg
+		->endereço
+		->contato1
+		->contato2
+		->dt_nascimento
+		->sexo
+		->dt_cadastro_cliente TIMESTAMP
+
+	vendas
+		->id_venda INT(11) AUTO_INCREMENT PRIMARY KEY,
+		->produto_id INT(11),
+		->cliente_id INT(11),
+		->funcionario_id(11),
+		->data_venda TIMESTAMP
+
+
+
+	603.935.073-35/1
+	60393507335
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

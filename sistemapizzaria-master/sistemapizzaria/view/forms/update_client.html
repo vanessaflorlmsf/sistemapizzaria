@@ -1,0 +1,30 @@
+<form action="controller/update_client.php" method="POST">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Seu nome:</label>
+    <input type="text" class="form-control"  placeholder="Seu nome" name="client_name"required value="<?php echo $client['client_name'];?>">
+  </div>
+
+  <div class="form-group">
+    <label for="exampleInputPassword1">Seu CPF:</label>
+    <input type="text" class="form-control" placeholder="Digite seu CPF" name="client_cpf" required value="<?php echo $client['client_cpf'];?>">
+  </div>
+  
+  <div class="form-group">
+    <label for="exampleInputPassword1">Seu Telefone:</label>
+    <input type="text" class="form-control" placeholder="Numero do Telefone" name="client_phone" required value="<?php echo $client['client_phone'];?>">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Seu Celular:</label>
+    <input type="text" class="form-control"  placeholder="Número do Celular" name="client_cellphone" required value="<?php echo $client['client_cellphone'];?>">
+  </div>
+
+  <div class="form-group">
+    <label for="exampleInputPassword1">Endereço:</label>
+    <input type="text" class="form-control" placeholder="Seu Endereço" name="client_address" required value="<?php echo $client['client_address'];?>">
+  </div>
+  <input type="hidden" name="filter" value="<?php echo $_GET['filter'];?>">
+
+   <button type="submit" class="btn btn-warning btn-block">
+    <i class="glyphicon glyphicon-pencil"></i>
+    Atualizar Cliente
+  </button>
